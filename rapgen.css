@@ -1,0 +1,113 @@
+/* styles.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 10px; /* Added padding for better spacing on small screens */
+}
+
+.container {
+  text-align: center;
+  width: 100%; /* Ensure the container takes full width */
+  max-width: 600px; /* Limit the max width for large screens */
+  margin-top: 20px;
+}
+
+.puzzle-container {
+  display: grid;
+  grid-template-columns: repeat(15, 30px);
+  gap: 5px;
+  margin-top: 20px;
+  justify-content: center; /* Center the grid */
+  align-items: center; /* Center the grid vertically */
+}
+
+.puzzle-cell {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0ffff;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.puzzle-cell:hover {
+  background-color: #add8e6;
+}
+
+.highlighted {
+  background-color: #ffeb3b;
+}
+
+.word-list {
+  margin-top: 20px;
+}
+
+.word-list h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.word-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.word-list li {
+  font-size: 1.2em;
+  color: #ff4500;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+  .puzzle-container {
+      grid-template-columns: repeat(15, 20px);
+      gap: 2px;
+  }
+
+  .puzzle-cell {
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+  }
+
+  .word-list h2 {
+      font-size: 1.2em;
+  }
+
+  .word-list li {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 400px) {
+  .puzzle-container {
+      grid-template-columns: repeat(15, 18px);
+      gap: 1px;
+  }
+
+  .puzzle-cell {
+      width: 18px;
+      height: 18px;
+      font-size: 12px;
+  }
+
+  .word-list h2 {
+      font-size: 1em;
+  }
+
+  .word-list li {
+      font-size: 0.9em;
+  }
+}
